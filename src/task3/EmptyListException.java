@@ -12,11 +12,11 @@ public class EmptyListException extends Exception {
     super(message);
   }
 
-  public EmptyListException(Throwable th) {
+/*  public EmptyListException(Throwable th) {
     super(th);
   }
 
   public EmptyListException(String mes, Throwable th) {
     super(mes, th);
-  }
+  }*/
 }

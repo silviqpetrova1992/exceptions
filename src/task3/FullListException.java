@@ -12,11 +12,11 @@ public class FullListException extends Exception {
     super(message);
   }
 
-  public FullListException(Throwable th) {
+/*  public FullListException(Throwable th) {
     super(th);
   }
 
   public FullListException(String mes, Throwable th) {
     super(mes, th);
-  }
+  }*/
 }

@@ -14,12 +14,12 @@ public class OutOfIntervalException extends Exception{
     super (message);
   }
 
-  public OutOfIntervalException(Throwable cause) {
+/*  public OutOfIntervalException(Throwable cause) {
     super (cause);
   }
 
   public OutOfIntervalException(String message, Throwable cause) {
     super (message, cause);
-  }
+  }*/
 
 }
