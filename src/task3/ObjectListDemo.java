@@ -21,20 +21,10 @@ public class ObjectListDemo {
       switch (a.charAt(0)) {
         case '1':
           System.out.println("Please, enter an element:");
-          try {
-            ol.add(sc.next());
-          } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
-          }
+          ol.add(sc.next());
           break;
         case '2':
-          try {
-            ol.remove();
-            System.out.println("The delete operation is successful!");
-          } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
-          }
-
+          ol.remove();
           break;
         case '3':
           ol.printAllElements();
