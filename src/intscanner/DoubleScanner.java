@@ -12,7 +12,7 @@ public class DoubleScanner {
    */
   public void checkInterval(double a) throws OutOfIntervalException {
     if (a >= 0 && a <= 100) {
-      System.out.println("The number you entered is OK");
+      System.out.println("The number you entered "+a+" is OK");
     } else {
       throw new OutOfIntervalException("The number you entered is out of interval");
     }
