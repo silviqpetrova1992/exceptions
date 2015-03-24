@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class ObjectListDemo {
   public static void main(String[] args) {
-    ObjectList ol = new ObjectList();
+    ObjectList ol = new ObjectList(3);
     String a = "1";
     while (a != "4") {
       System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -23,7 +23,7 @@ public class ObjectListDemo {
           System.out.println("Please, enter an element:");
           try {
             ol.add(sc.next());
-          } catch (FullListException e) {
+          } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
           }
           break;
@@ -31,7 +31,7 @@ public class ObjectListDemo {
           try {
             ol.remove();
             System.out.println("The delete operation is successful!");
-          } catch (EmptyListException e) {
+          } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
           }
 

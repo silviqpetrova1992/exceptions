@@ -8,14 +8,15 @@ import java.util.Objects;
  * Created by Silvia Petrova(silviqpetrova1992@gmail.com)on 3/21/15.
  */
 public class ObjectList {
-  private final int n = 4;
-  private ArrayList<Object> array;
+ private  int n = 0;
+  private Object[] array;
 
   /**
-   * Construct the object without parameters
+   * Constructor eith one parameter
+   * @param n The length of the array.
    */
-  public ObjectList() {
-    this.array = new ArrayList<Object>();
+  public ObjectList(int n) {
+    this.array = new Object[n];
   }
 
   /**
@@ -24,12 +25,13 @@ public class ObjectList {
    * @param obj The object that we want to add
    * @throws FullListException If the list is already full.
    */
-  public void add(Object obj) throws FullListException {
+  public void add(Object obj) throws  ArrayIndexOutOfBoundsException{
 
-    if (array.size() >= n) {
-      throw new FullListException("!!!!!!The list is full! Sorry you can't add more elements!!!!!!");
+    if (array.length <= n) {
+      throw new ArrayIndexOutOfBoundsException("!!!!!!The list is full! Sorry you can't add more elements!!!!!!");
     } else {
-      array.add(obj);
+      array[n]=obj;
+      n++;
     }
   }
 
@@ -38,21 +40,20 @@ public class ObjectList {
    *
    * @throws EmptyListException Id the list is empty.
    */
-  public void remove() throws EmptyListException {
-    if (array.size() == 0) {
-      throw new EmptyListException("!!!!!!The List is empty! You can't delete!!!!!!");
+  public void remove() throws ArrayIndexOutOfBoundsException {
+    if (n == 0) {
+      throw new ArrayIndexOutOfBoundsException("!!!!!!The List is empty! You can't delete!!!!!!");
     } else {
-      array.remove(array.size() - 1);
-    }
+      array[--n]=0;
+   }
   }
 
   /**
    * Print the list.
    */
   public void printAllElements() {
-    Iterator<Object> it = array.iterator();
-    for (Object obj : array) {
-      System.out.println(obj.toString());
+    for(int i=0;i<n;i++){
+      System.out.println(array[i]);
     }
   }
 }
